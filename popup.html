@@ -1,22 +1,18 @@
 <html>
   <head>
     <meta charset='utf-8'>
-    <style>
-      body{
-        width: 450px;
-        height: 600px;
-      }
-    </style>
+    <link rel="stylesheet" href="style.css">
   </head>
   <body>
-    <h1>コールサインを入力</h1>
+    <h1>日本国内アマチュア無線局検索</h1>
     <form id='query'>
+      <p>コールサインを入力</p>
       <input id='callsign'>
     </form>
-    <button id='check'>check</button>
+    <button id='check' class='btn_core'>check</button>
     <div id='result'></div>
-    <p>
-      このサービスは、総務省 電波利用ホームページのWeb-API 機能を利用して取得した情報をもとに作成しているが、サービスの内容は総務省によって保証されたものではない
+    <p class='alert'>
+      このサービスは、総務省 電波利用ホームページのWeb-API 機能を利用して取得した情報をもとに作成しているが、サービスの内容は総務省によって保証されたものではありません。
     </p>
     <script src='get.js'></script>
   </body>

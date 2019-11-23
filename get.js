@@ -8,24 +8,24 @@ function getCall(event){// XMLHttpRequestオブジェクトの作成
   request.onload = function () {
     data=this.response
 
-    let output =`<p>入力:<span id="inputValue">${call}</span></p>`
+    let output =`<p>入力:<span id='inputValue'>${call}</span></p>`
     // レスポンスが返ってきた時の処理
-    if(data['musen'].length>5){
-      for (let i = 0, l = 5; i < l; i++) {
-        output = output + `<h2>結果 ${i + 1}</h2>`
-        output = output + `<dl>
-          <dt>名称</dt><dd>${data['musen'][i]['listInfo']['name']}</dd>
-          <dt>所在地</dt><dd>${data['musen'][i]['listInfo']['tdfkCd']}</dd>
-          </dl>`
+    if(data['musen'].length>3){
+      for (let i = 0, l = 3; i < l; i++) {
+        output = output + `<div class='result'><h2>結果 ${i + 1}</h2>`
+        output = output + `<dl class='data'>
+          <div class=row><dt>名称</dt><dd>${data['musen'][i]['listInfo']['name']}</dd></div>
+          <div class=row><dt>所在地</dt><dd>${data['musen'][i]['listInfo']['tdfkCd']}</dd></div>
+          </dl></div>`
       }
-      output=output+`<p id="viewMore">他の結果はこちら</p>`
+      output=output+`<button id='viewMore' class='btn_sub'>他の結果はこちら</button>`
     }else {
       for (let i=0,l = data['musen'].length; i < l;i++){
-        output=output+`<h2>結果 ${i+1}</h2>`
-        output = output + `<dl>
-          <dt>名称</dt><dd>${data['musen'][i]['listInfo']['name']}</dd>
-          <dt>所在地</dt><dd>${data['musen'][i]['listInfo']['tdfkCd']}</dd>
-          </dl>`
+        output = output +`<div class='result'><h2>結果 ${i+1}</h2>`
+        output = output + `<dl class='data'>
+          <div class=row><dt>名称</dt><dd>${data['musen'][i]['listInfo']['name']}</dd></div>
+          <div class=row><dt>所在地</dt><dd>${data['musen'][i]['listInfo']['tdfkCd']}</dd></div>
+          </dl></div>`
       }
     }
     document.getElementById('result').innerHTML = output
