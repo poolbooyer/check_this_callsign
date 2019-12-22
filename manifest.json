@@ -1,7 +1,7 @@
 {
   "manifest_version":2,
   "name":"Where this call?",
-  "shrot_name":"QTH?",
+  "short_name":"QTH?",
   "version":"1.0.0",
   "description":"そのコールサイン、どこのコールか調べます！",
   "icons":{
