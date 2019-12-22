@@ -18,6 +18,8 @@ function getCall(event){
             </dl></div>`
         }
         output=output+`<button id='viewMore' class='btn_sub'>他の結果はこちら</button>`
+        document.getElementById('result').innerHTML = output
+        document.getElementById('viewMore').addEventListener('click', openView)
       }else {
         for (let i=0,l = data['musen'].length; i < l;i++){
           output = output +`<div class='result'><h2>結果 ${i+1}</h2>`
@@ -26,9 +28,8 @@ function getCall(event){
             <div class=row><dt>所在地</dt><dd>${data['musen'][i]['listInfo']['tdfkCd']}</dd></div>
             </dl></div>`
         }
+        document.getElementById('result').innerHTML = output
       }
-      document.getElementById('result').innerHTML = output
-      document.getElementById('viewMore').addEventListener('click', openView)
     }
     request.send()
   }else{
